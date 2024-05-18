@@ -38,8 +38,8 @@ app.post("/shelf",async (req,res) =>{
 });
 
 //create route (input)
-app.get("/shelf/edit", (req,res) => {
-  res.render("edit.ejs");
+app.get("/shelf/new", (req,res) => {
+  res.render("new.ejs");
 });
 
 //delete route

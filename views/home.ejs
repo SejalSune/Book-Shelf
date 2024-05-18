@@ -49,7 +49,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/shelf/edit">Add new book</a>
+                <a class="nav-link active" aria-current="page" href="/shelf/new">Add new book</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,8 +64,8 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onkeyup="search_book()" id="searchbar" name="search">
+                <button class="btn btn-outline-success">Search</button>
             </form>
           </div>
         </div>
@@ -79,19 +79,35 @@
                     <div class="card" style="width: 13rem;">
                         <img src="<%= data.coverpage %>" class="card-img-top" alt="<%= data.title %>" height="250px">
                         <div class="card-body">
-                        <p class="card-text"><%= data.title %></p>
+                        <p class="card-text book-title"><%= data.title %></p>
                         </div>
                     </div>
                 </a>
             </div>
         <% } %>
     </div>
-   
-    
-
-
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function search_book() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('book-title');
+            let cards = document.getElementsByClassName('card');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    cards[i].style.display = "none";
+                }
+                else {
+                    cards[i].style.display = "block";
+                }
+
+                if (!input) {
+                    cards[i].style.display = "block";
+                }
+            }
+        }
+    </script>
 </body>
 </html>

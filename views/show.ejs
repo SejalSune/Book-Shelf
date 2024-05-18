@@ -1,52 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookShelf</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookShelf - Book Details</title>
+  <style>
+    body {
+      font-family: cursive, sans-serif; /* Playful cursive font */
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f9f9; /* Light pastel background */
+    }
+    /* Center "Book Details" heading horizontally */
+    h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #333; /* Darker text for better contrast */
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); /* Subtle text shadow for depth */
+      text-align: center;
+    }
+    .book-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* Center details and image horizontally */
+      margin: 0 auto; /* Center the content section */
+      max-width: 700px; /* Limit container width for smaller screens */
+      border: 5px solid #e0e0e0; /* Cute border around details */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      background-color: #fff; /* White background for details */
+      margin-bottom: 9px;
+    }
+    .book-details > div {
+      flex: 1;
+      padding: 15px;
+    }
+    .detail-pair {
+      margin-bottom: 10px;
+    }
+    .detail-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333; /* Darker text for labels */
+      font-size: 1.1em;
+      text-decoration: underline dotted #e0e0e0; /* Cute dotted underline for labels */
+    }
+    .detail-value {
+      display: inline-block;
+    }
+    img {
+      display: block;
+      max-width: 300px;
+      margin-bottom: 20px;
+      border: 2px solid #e0e0e0; /* Cute border around image */
+    }
+    form {
+      margin-bottom: 10px;
+      text-align: center; /* Center buttons by default */
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 10px; /* Rounded button corners */
+      background-color: #e0e0e0; /* Light gray buttons */
+      color: #333; /* Darker text for buttons */
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+      font-size: 1em; /* Smaller font size for a cozy feel */
+    }
+    button:hover {
+      background-color: #d3d3d3; /* Slightly darker gray on hover */
+    }
+
+    /* Responsive styling for text alignment */
+    @media (max-width: 768px) {
+      .book-details {
+        justify-content: center; /* Center details and image on smaller screens */
+      }
+      form {
+        text-align: left; /* Align buttons left on smaller screens */
+      }
+      .butt {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Details of Book</h1>
-    <table border="1">
-        <tr>
-            <th>Title</th>
-            <td><%= bookdata.title %></td>
-        </tr>
-        <tr>
-            <th>Author</th>
-            <td><%= bookdata.author %></td>
-        </tr>
-        <tr>
-            <th>Language</th>
-            <td><%= bookdata.language %></td>
-        </tr>
-        <tr>
-            <th>Publisher</th>
-            <td><%= bookdata.publisher %></td>
-        </tr>
-        <tr>
-            <th>Publisher City</th>
-            <td><%= bookdata.publisher_city %></td>
-        </tr>
-        <tr>
-            <th>Publication Date</th>
-            <td><%= bookdata.publication_date %></td>
-        </tr>
-        <tr>
-            <th>ISBN</th>
-            <td><%= bookdata.ISBN %></td>
-        </tr>
-    </table>
+  <h1><%= bookdata.title %></h1>
+  <div class="book-details">
+    <div>
+      <div class="detail-pair">
+        <span class="detail-label">Author:</span>
+        <span class="detail-value"><%= bookdata.author %></span>
+      </div>
+      <div class="detail-pair">
+        <span class="detail-label">Language:</span>
+        <span class="detail-value"><%= bookdata.language %></span>
+      </div>
+      <div class="detail-pair">
+        <span class="detail-label">Publisher:</span>
+        <span class="detail-value"><%= bookdata.publisher %></span>
+      </div>
+      <div class="detail-pair">
+        <span class="detail-label">Publisher City:</span>
+        <span class="detail-value"><%= bookdata.publisher_city %></span>
+      </div>
+      <div class="detail-pair">
+        <span class="detail-label">Publication date:</span>
+        <span class="detail-value"><%= bookdata.publication_date.toDateString() %></span>
+      </div>
+      <div class="detail-pair">
+        <span class="detail-label">ISBN:</span>
+        <span class="detail-value"><%= bookdata.ISBN %></span>
+      </div>
+    </div>
+    <div>
+      <img src="<%= bookdata.coverpage %>" alt="<%= bookdata.title %> cover" height="190px">
+    </div>
+  </div>
 
-    <img src="<%= bookdata.coverpage %>" alt="" height="300px">
+    <div class="book-details">
+        <%= bookdata.review %>
+    </div>
 
-    <form action="/shelf/<%= bookdata._id %>?_method=DELETE" method="post">
-        <button>Delete</button>
-    </form>
+    <div class="book-details butt">
 
-    <form action='/shelf/<%= bookdata._id %>/edit' method="get">
-        <button>Edit</button>
-    </form>
-    
+        <form action='/shelf/<%= bookdata._id %>/edit' method="get">
+            <button type="submit">Edit</button>
+        </form>
+
+        <form action="/shelf/<%= bookdata._id %>?_method=DELETE" method="post">
+            <button type="submit">Delete</button>
+        </form>
+
+    </div>
+
 </body>
 </html>

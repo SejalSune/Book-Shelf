@@ -9,6 +9,7 @@ const bookschema = new mongoose.Schema({
     publication_date: Date,
     ISBN:Number,
     coverpage:String,
+    review:String,
 });
 
 const Books = mongoose.model('Books', bookschema);
