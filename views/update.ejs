@@ -124,8 +124,12 @@
                 <input type="text" id="coverpage" name="book[coverpage]" value="<%= bookdata.coverpage %>" required>
             </div>
             <div>
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="book[price]" value="<%= bookdata.price %>" required>
+            </div>
+            <div>
                 <label for="review">Review:</label>
-                <textarea name="book[review]" id="review" rows="4" required><%= bookdata.review %></textarea>
+                <textarea name="book[review]" id="review" rows="1" required><%= bookdata.review %></textarea>
             </div>
             <button>Add Book</button>
         </div>

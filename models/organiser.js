@@ -10,6 +10,7 @@ const bookschema = new mongoose.Schema({
     ISBN:Number,
     coverpage:String,
     review:String,
+    price:Number,
 });
 
 const Books = mongoose.model('Books', bookschema);

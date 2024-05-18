@@ -9,6 +9,7 @@ const sampleData = [
         ISBN: 9780061120084,
         coverpage: "https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "1984",
@@ -20,6 +21,7 @@ const sampleData = [
         ISBN: 9780451524935,
         coverpage: "https://rukminim2.flixcart.com/image/850/1000/xif0q/book/m/c/5/-original-imagqtdt7tnzf8dk.jpeg?q=90&crop=false",
         review:"good very good",
+        price:100,
     },
     {
         title: "The Catcher in the Rye",
@@ -31,6 +33,7 @@ const sampleData = [
         ISBN: 9780316769488,
         coverpage: "https://thethinksync.com/wp-content/uploads/2021/09/thecatcherintherye.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "The Great Gatsby",
@@ -42,6 +45,7 @@ const sampleData = [
         ISBN: 9780743273565,
         coverpage: "https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "Moby-Dick",
@@ -53,6 +57,7 @@ const sampleData = [
         ISBN: 9780142437249,
         coverpage: "https://m.media-amazon.com/images/M/MV5BYzg0MjFmMjAtMmNlMC00ZmEzLWE0ZDQtYTFhZjAyNzIxZWU3XkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "War and Peace",
@@ -64,6 +69,7 @@ const sampleData = [
         ISBN: 9780199232765,
         coverpage: "https://rukminim2.flixcart.com/image/850/1000/kshtxu80/book/t/c/q/war-and-peace-original-imag6fw59eeyhkza.jpeg?q=90&crop=false",
         review:"good very good",
+        price:100,
     },
     {
         title: "Crime and Punishment",
@@ -75,6 +81,7 @@ const sampleData = [
         ISBN: 9780140449136,
         coverpage: "https://m.media-amazon.com/images/I/71O2XIytdqL._AC_UF1000,1000_QL80_.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "The Hobbit",
@@ -86,6 +93,7 @@ const sampleData = [
         ISBN: 9780547928227,
         coverpage: "https://m.media-amazon.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_FMjpg_UX1000_.jpg",
         review:"good very good",
+        price:100,
     },
     {
         title: "Anna Karenina",
@@ -97,6 +105,7 @@ const sampleData = [
         ISBN: 9780143035008,
         coverpage: "https://cdn.kobo.com/book-images/f3b573aa-97a4-4ab9-ad00-23dd64690878/1200/1200/False/anna-karenina-64.jpg",
         review:"good very good",
+        price:100,
     }
 ];
 
