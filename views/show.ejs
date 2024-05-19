@@ -6,7 +6,7 @@
   <title>BookShelf - Book Details</title>
   <style>
     body {
-      font-family: cursive, sans-serif; /* Playful cursive font */
+      font-family: sans-serif; /* Playful cursive font */
       margin: 0;
       padding: 20px;
       background-color: #f7f9f9; /* Light pastel background */
@@ -104,8 +104,8 @@
         <span class="detail-value"><%= bookdata.publisher %></span>
       </div>
       <div class="detail-pair">
-        <span class="detail-label">Publisher City:</span>
-        <span class="detail-value"><%= bookdata.publisher_city %></span>
+        <span class="detail-label">Pages:</span>
+        <span class="detail-value"><%= bookdata.pages %></span>
       </div>
       <div class="detail-pair">
         <span class="detail-label">Publication date:</span>
@@ -126,7 +126,7 @@
   </div>
 
     <div class="book-details">
-        <%= bookdata.review %>
+        <p><b>Review:</b> <%= bookdata.review %></p>
     </div>
 
     <div class="book-details butt">

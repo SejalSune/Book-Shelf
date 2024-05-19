@@ -5,12 +5,12 @@ const bookschema = new mongoose.Schema({
     author: String,
     language: String,
     publisher: String,
-    publisher_city: String,
     publication_date: Date,
     ISBN:Number,
     coverpage:String,
     review:String,
     price:Number,
+    pages:Number,
 });
 
 const Books = mongoose.model('Books', bookschema);

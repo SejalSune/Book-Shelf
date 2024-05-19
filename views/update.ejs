@@ -6,7 +6,7 @@
     <title>Add Book - BookShelf</title>
     <style>
         body {
-            font-family: cursive, sans-serif; /* Playful cursive font */
+            font-family: sans-serif; /* Playful cursive font */
             margin: 0;
             padding: 20px;
             background-color: #f7f9f9; /* Light pastel background */
@@ -84,6 +84,9 @@
             .book-details div:nth-child(odd) {
                 margin-right: 0; /* No margin for odd-numbered divs on smaller screens */
             }
+            textarea {
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -108,13 +111,13 @@
                 <input type="text" id="publisher" name="book[publisher]" value="<%= bookdata.publisher %>" required>
             </div>
             <div>
-                <label for="publisher_city">Publisher City:</label>
-                <input type="text" id="publisher_city" name="book[publisher_city]" value="<%= bookdata.publisher_city %>" required>
+                <label for="pages">Pages:</label>
+                <input type="text" id="pages" name="book[pages]" value="<%= bookdata.pages %>" required>
             </div>
             <div>
                 <label for="publication_date">Publication Date:</label>
-                <input type="date" id="publication_date" name="book[publication_date]" value="<%= bookdata.publication_date %>" required>
-            </div>
+                <input type="date" id="publication_date" name="book[publication_date]" value="<%= bookdata.publication_date ? bookdata.publication_date.toISOString().split('T')[0] : '' %>" required>
+            </div>            
             <div>
                 <label for="ISBN">ISBN:</label>
                 <input type="number" id="ISBN" name="book[ISBN]" value="<%= bookdata.ISBN %>" required>
